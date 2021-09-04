@@ -1,0 +1,1 @@
+from schedule_calendar.views import home_view
