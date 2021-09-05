@@ -16,7 +16,7 @@ class TaskCreateForm(forms.ModelForm):
         start_date = self.cleaned_data['start_date']
         end_date = self.cleaned_data['end_date']
 
-        if start_date <= end_date:
+        if end_date <= start_date:
             raise forms.ValidationError("Erro ao criar tarefa. A data de início deve ser menor que a data do fim de uma tarefa.")
 
         return self.cleaned_data
@@ -41,7 +41,7 @@ class TaskEditForm(forms.ModelForm):
         start_date = self.cleaned_data['start_date']
         end_date = self.cleaned_data['end_date']
 
-        if start_date <= end_date:
+        if end_date <= start_date:
             raise forms.ValidationError("Erro ao criar tarefa. A data de início deve ser menor que a data do fim de uma tarefa.")
 
         return self.cleaned_data
